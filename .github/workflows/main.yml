@@ -27,6 +27,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install dependecies
         run: |
+          export PYTHONPATH=$(pwd)
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
           pip install -r requirements/requirements-lint.txt
@@ -50,6 +51,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install dependecies
         run: |
+          export PYTHONPATH=$(pwd)
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
           pip install -r requirements/requirements-test.txt
