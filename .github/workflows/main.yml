@@ -12,7 +12,7 @@ env:
   SERVER_HOST: ${{ secrets.SERVER_HOST }}
   SERVER_USER: ${{ secrets.SERVER_USER }}
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-  PROJECT_NAME: 'otus-source-code-lesson'
+  PROJECT_NAME: 'otus-cicd'
   PROD_VENV_NAME: '.venv'
 
 jobs:
@@ -79,8 +79,8 @@ jobs:
           username: ${{ env.SERVER_USER }}
           key: ${{ env.SSH_PRIVATE_KEY }}
           script: |
-            mkdir -p ${{ env.PROJECT_NAME }} || true
             cd ${{ env.PROJECT_NAME }}
+            ls -la
 
             # check venv and install
             if [[ ! -d ${{ env.PROD_VENV_NAME}} ]]; then
